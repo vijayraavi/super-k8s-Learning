@@ -24,7 +24,7 @@
         "imagePublisher2": "Canonical",
         "imageOffer2": "UbuntuServer",
         "osVersion2": "18.04-LTS",
-        "customData": "https://raw.githubusercontent.com/github.com/vijayraavi/super-k8s-Learning/main/kubeadm/Setup-Kubeadm-AzureVM/cloud-init-nginx.txt"
+        "customData": "https://raw.githubusercontent.com/vijayraavi/super-k8s-Learning/main/kubeadm/Setup-Kubeadm-AzureVM/cloud-init-nginx.txt"
     },
     "resources": [
         {
@@ -199,7 +199,7 @@
                 "autoUpgradeMinorVersion": true,
                 "settings": {
                     "fileUris": [
-                        "https://raw.githubusercontent.com/github.com/vijayraavi/super-k8s-Learning/main/kubeadm/Setup-Kubeadm-AzureVM/install-common-tools.sh"
+                        "https://raw.githubusercontent.com/vijayraavi/super-k8s-Learning/main/kubeadm/Setup-Kubeadm-AzureVM/install-common-tools.sh"
                     ],
                     "commandToExecute": "sh install-common-tools.sh"
                 }

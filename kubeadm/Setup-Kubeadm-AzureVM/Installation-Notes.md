@@ -5,7 +5,9 @@ Installing a  Multi Node Cluster using kubeadm
 --> git clone below repo in Azure Cloud Shell
 https://github.com/vijayraavi/super-k8s-Learning.git
 
-cd kubeadm\Setup-Kubeadm-AzureVM
+git clone https://github.com/vijayraavi/super-k8s-Learning.git
+
+cd super-k8s-Learning/kubeadm/Setup-Kubeadm-AzureVM
 
 code .
 
