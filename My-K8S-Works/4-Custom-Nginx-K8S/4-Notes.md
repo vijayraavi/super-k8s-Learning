@@ -4,7 +4,7 @@
 - Push to Docker Registry
 - Use it to run in Kubernetes
 
-> mkdir -p code
+> mkdir -p 4-Custom-Nginx-K8S
 > cd code
 > pwd
 > docker pull nginx:latest
@@ -28,6 +28,7 @@
   :wq!
 
 > ls
+> docker login
 > docker build -t vijayraavi/nginx-custom:v1 .
 > docker images
 > docker push vijayraavi/nginx-custom:v1
