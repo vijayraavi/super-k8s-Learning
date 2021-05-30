@@ -6,6 +6,8 @@ deploymentName="kubeadm-vm-deploy"
 # download template
 wget https://raw.githubusercontent.com/vijayraavi/super-k8s-Learning/main/kubeadm/Setup-Kubeadm-AzureVM/kubeadm-cluster-deploy.json -O template.json
 
+# change location, username, password in template file
+
 # create resource group
 az group create -n $resourceGroupName -l $location
 
@@ -14,6 +16,13 @@ az deployment group create \
 -g $resourceGroupName \
 -n $deploymentName \
 --template-file template.json
+
+# # OR Execute below with default values for deploying VMS
+# az deployment group create \
+# -g $resourceGroupName \
+# -n $deploymentName \
+# --template-file kubeadm-cluster-deploy.json
+
 
 # list public ip
 az vm list-ip-addresses -g kubeadm-rg | grep ipAddress
