@@ -11,17 +11,17 @@ cd super-k8s-Learning/kubeadm/Setup-Kubeadm-AzureVM
 
 code .
 
-<!-- Deploy VMs -->
+# Deploy VMs -->
 --> Run Commands in kubeadm-deploy-vm.sh
 
-<!-- List IP addresses of newly created VMs -->
+# List IP addresses of newly created VMs -->
 az vm list-ip-addresses -g kubeadm-rg | grep ipAddress
 <!--  Sample donot use below-
     # "ipAddress": "20.193.238.177" -- > Controller Node
     # "ipAddress": "20.193.238.75" -- > Worker Node
 -->
 
-<!-- SSH into one node (Controller Node) -->
+# SSH into one node (Controller Node) -->
 ssh vijayk8suser@<IP address> --> ssh vijayk8suser@20.193.238.177
 password: 1StrongP@ssword!
 
@@ -29,20 +29,20 @@ password: 1StrongP@ssword!
 --> Run commands in kubeadm-controller-up.sh
 --> Copy Kubeadm join command and paste in kubeadm-nodes-up.sh
 
-<!-- Sample donot use below
-kubeadm join 10.0.0.5:6443 --token 0l1vc2.hgia9vlcu6q3kfci \
+# Sample by adding sudo -- donot use below
+sudo kubeadm join 10.0.0.5:6443 --token 0l1vc2.hgia9vlcu6q3kfci \
     --discovery-token-ca-cert-hash sha256:c4e145a964dd224bf5dc827e82d764ab30002df8794e2918185c7332664da14d
  -->
 
 --> exit from controller node
-<!-- List IP addresses of newly created VMs -->
+# List IP addresses of newly created VMs -->
 az vm list-ip-addresses -g kubeadm-rg | grep ipAddress
-<!-- SSH into one node (Worker Node)   Ctrl+R -- Search for previous commands -->
+# SSH into one node (Worker Node)   Ctrl+R -- Search for previous commands -->
 ssh vijayk8suser@<IP address> --> ssh vijayk8suser@20.193.238.75
 password: 1StrongP@ssword!
 
 --> Run commands in kubeadm-nodes-up.sh (execute kubeadm join command at last using elevated privilages sudo)
-<!-- Sample donot use below
+# Sample donot use below
 sudo kubeadm join 10.0.0.5:6443 --token 0l1vc2.hgia9vlcu6q3kfci \
     --discovery-token-ca-cert-hash sha256:c4e145a964dd224bf5dc827e82d764ab30002df8794e2918185c7332664da14d
  -->
@@ -50,7 +50,7 @@ sudo kubeadm join 10.0.0.5:6443 --token 0l1vc2.hgia9vlcu6q3kfci \
 --> exit from worker node
 
 --> ssh into control node and run below commands 
-<!-- ssh vijayk8suser@<IP address> -- > ssh vijayk8suser@20.193.238.177 -->
+# ssh vijayk8suser@<IP address> -- > ssh vijayk8suser@20.193.238.177 -->
 kubectl get nodes
 kubectl get all --all-namespaces
 kubectl run nginx --image=nginx
@@ -61,7 +61,7 @@ kubectl run curlpod --image=nicolaka/netshoot --rm -it -- sh  #(opens shell insi
     exit
 kubectl get pods -o wide
 
-<!-- Sample history -->
+# Sample history -->
 #################################################################################################
 $ ssh vijayk8suser@20.193.238.177
 The authenticity of host '20.193.238.177 (20.193.238.177)' can't be established.

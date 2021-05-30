@@ -1,21 +1,24 @@
-<!-- Using containerd as the container runtime in K8S -->
+# Using containerd as the container runtime in K8S 
 start https://shell.azure.com
 
 git clone https://github.com/vijayraavi/super-k8s-Learning.git
 
 cd super-k8s-Learning/containerd
+
+
 code .
 
-<!-- Execute commands in containerd-deploy-vm.sh  -->
+# Execute commands in containerd-deploy-vm.sh  
     # list public ip
     az vm list-ip-addresses -g containerd-rg | grep ipAddress
-
+              # "ipAddress": "xx.xxx.xxx.xxx",
     # ssh into containerDVM node
-    ssh 
+    ssh containerDVM@<IP>  -- > ssh containerDVM@
+    password: 1StrongP@ssword!
 
-    <!-- Execute commands in containerd-install.sh in containerDVM node -->
+    # Execute commands in containerd-install.sh in containerDVM node 
 
-    <!-- Execute commands in containderd-k8s-install.sh in containerDVM node  -->
+    # Execute commands in containderd-k8s-install.sh in containerDVM node 
          // For containerd some additional configurations to be done
          # enable bridge networking
          # enable ip forwarding
@@ -57,13 +60,18 @@ code .
          kubectl get no -o wide
          # <InternalIP -- >
 
-         <!-- 
+         #
          We can use this node IP address (<InternalIP -- >) to access the pod IP address (<IP-- >)
          
          Thats how we created a deployment, access our pod from outside of cluster using kubectl proxy.
-          -->
+         #
 
 
+
+# SAMPLE HISTORY
+###################################################################################################
+
+###################################################################################################
 
 
 
