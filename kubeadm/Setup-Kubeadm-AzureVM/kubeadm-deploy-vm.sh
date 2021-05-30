@@ -26,3 +26,5 @@ az deployment group create \
 
 # list public ip
 az vm list-ip-addresses -g kubeadm-rg | grep ipAddress
+    # "ipAddress": "20.193.238.177",
+    # "ipAddress": "20.193.238.75",

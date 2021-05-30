@@ -28,3 +28,8 @@ sudo apt-get install -y kubelet=1.19.9-00 kubeadm=1.19.9-00 kubectl=1.19.9-00
 sudo apt-mark hold kubelet kubeadm kubectl
 
 # paste kubeadm join command here from kubeadm-controller-up.sh here and execute in Worker node
+
+# <!-- Sample donot use below
+sudo kubeadm join 10.0.0.5:6443 --token 0l1vc2.hgia9vlcu6q3kfci \
+    --discovery-token-ca-cert-hash sha256:c4e145a964dd224bf5dc827e82d764ab30002df8794e2918185c7332664da14d
+#  -->
