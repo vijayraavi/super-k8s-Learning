@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {},
     "variables": {
-        "location": "westus",
+        "location": "centralindia",
         "vnetName": "lab-VNet1",
         "vnetPrefix": "10.0.0.0/16",
         "subnetName": "default",

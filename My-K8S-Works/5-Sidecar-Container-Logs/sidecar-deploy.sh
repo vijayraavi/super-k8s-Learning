@@ -5,7 +5,7 @@ wget https://raw.githubusercontent.com/vijayraavi/super-k8s-Learning/main/My-K8S
 
 # set env variables
 resourceGroupName="sidecar-rg"
-location="southcentralus"
+location="centralindia"
 deploymentName="sidecar-deploy"
 
 # create resource group
@@ -19,6 +19,12 @@ az deployment group create \
 
 # list public ip
 az vm list-ip-addresses -g sidecar-rg | grep ipAddress
+
+# SSH into VM
+     --> "ipAddress": "52.172.254.33",
+--> ssh K8Suser@<IP> --> ssh K8Suser@52.172.254.33
+password: 1StrongP@ssword!
+
 
 # Add Docker’s official GPG key
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -57,7 +63,7 @@ mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
-# install flannel 
+# install flannel  
 kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 
 # download the yml
@@ -65,6 +71,7 @@ wget https://raw.githubusercontent.com/vijayraavi/super-k8s-Learning/main/My-K8S
 
 # remove taint from controller node
 kubectl taint no node1 node-role.kubernetes.io/master:NoSchedule-
+# In the above command replace node name "node1" with "k8svm" (kubectl get no)
 
 # deploy the pod
 kubectl create -f sidecar-pod.yml
