@@ -18,7 +18,7 @@
         "adminUsername": "containerDuser",
         "adminPassword": "1StrongP@ssword!",
         "vmName2": "containerDVM",
-        "vmSize": "Standard_B2s",
+        "vmSize": "Standard_B4ms", //Standard_B2s
         "imagePublisher": "canonical",
         "imageOffer": "0001-com-ubuntu-server-focal",
         "imageSku": "20_04-lts"
