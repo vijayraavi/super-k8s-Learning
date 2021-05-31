@@ -17,6 +17,8 @@ net.bridge.bridge-nf-call-iptables = 1
 sudo -s
 sudo echo '1' > /proc/sys/net/ipv4/ip_forward
 
+#exit out of root --> exit
+
 # Reload the configurations
 sudo sysctl --system
 
@@ -24,7 +26,7 @@ sudo sysctl --system
 sudo modprobe overlay
 sudo modprobe br_netfilter
 
-# disable swap
+# disable swap (for perofrmance improvement)
 sudo swapoff -a
 
 # pull containers for kubeadm
@@ -38,6 +40,12 @@ mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
+# Check node
+kubectl get no
+watch "kubectl get no"
+
+# Wait unit the above node is ready.(It will take few minutes)
+
 # install flannel 
 kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 
@@ -49,6 +57,12 @@ kubectl taint no containerdvm node-role.kubernetes.io/master:NoSchedule-
 
 # create a deployment
 kubectl create deploy connector --image gcr.io/google-samples/kubernetes-bootcamp:v1
+
+# Check deployments, replica sets, pods
+kubectl get deploy
+kubectl get rs
+kubectl get po
+
 
 # poke a hole into the cluster and open a new tab
 kubectl proxy

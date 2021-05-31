@@ -6,3 +6,5 @@ sudo mkdir -p /etc/containerd
 sudo su -
 containerd config default  /etc/containerd/config.toml
 
+# exit from root user
+
