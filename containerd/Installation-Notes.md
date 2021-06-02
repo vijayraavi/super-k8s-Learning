@@ -27,8 +27,12 @@ code .
          # pull containers for kubeadm
          # initialize the cluster
          # set config and permissions
+              kubectl get no
+              watch "kubectl get no"
+              #wait until Node is in ready state
+              
          # install flannel 
-                flannel is container networking interface which will allow Nodes talking to each other.
+                flannel is container networking interface(CNI) which will allow Nodes talking to each other.
          # view the taints
                 By default when you install kubernetes this way the node has taint on it (Effect--> NoSchedule), you can see by executing below command
 
