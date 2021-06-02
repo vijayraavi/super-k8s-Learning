@@ -67,6 +67,7 @@ kubectl get po
 # poke a hole into the cluster and open a new tab
 kubectl proxy
 
+# In new tab ssh into controller node and perform below steps
 # curl localhost
 curl http://localhost:8001/version
 

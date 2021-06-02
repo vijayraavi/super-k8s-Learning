@@ -29,7 +29,6 @@ code .
          # set config and permissions
               kubectl get no
               watch "kubectl get no"
-              #wait until Node is in ready state
               
          # install flannel 
                 flannel is container networking interface(CNI) which will allow Nodes talking to each other.
@@ -67,7 +66,7 @@ code .
          #
          We can use this node IP address (<InternalIP -- >) to access the pod IP address (<IP-- >)
          
-         Thats how we created a deployment, access our pod from outside of cluster using kubectl proxy.
+         Thats how we created a deployment, access our pod from outside the pod network using kubectl proxy.
          #
 
 
