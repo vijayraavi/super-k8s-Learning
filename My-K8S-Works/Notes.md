@@ -7,7 +7,7 @@
 # 4 - Create a Custom NGINX Pod and push to Docker Hub and Use it in K8S Cluster
 # 5 - Using a Sidecar container to collect logs from two seperate streams in K8S
 # 6 - Creating a Deployment and exposing a Service in K8S
-# 7 - 
+# 7 - Working with persistent data in k8s cluster
 # 8 - 
 # 9 - 
 # 10 - 
